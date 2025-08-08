@@ -21,7 +21,7 @@
     <!-- Package Info -->
     <Title>Easy.Logging</Title>
     <PackageId>Easy.Logging</PackageId>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>Elmin Alirzayev</Authors>
     <Company>Easy Code Tools</Company>
     <Description>Easy.Logging is a lightweight, high-performance caching library for .NET that supports MemoryLogging, Redis, and multi-layer caching with pluggable serialization.</Description>
