@@ -8,7 +8,7 @@ using Easy.Logging.RedisSink_;
 using Microsoft.Extensions.DependencyInjection;
 using StackExchange.Redis;
 
-#if NET6_0_OR_GREATER || NET7_0_OR_GREATER || NET8_0_OR_GREATER
+#if NET6_0_OR_GREATER || NET7_0_OR_GREATER || NET8_0_OR_GREATER || NET9_0_OR_GREATER
 using Microsoft.EntityFrameworkCore;
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETFRAMEWORK
