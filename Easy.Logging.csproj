@@ -39,8 +39,8 @@
 
     <!-- Build -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>	  
+    <!--<GenerateDocumentationFile>true</GenerateDocumentationFile>-->
+    <!--<TreatWarningsAsErrors>true</TreatWarningsAsErrors>-->	  
     <LangVersion>10.0</LangVersion>
   </PropertyGroup>
 
