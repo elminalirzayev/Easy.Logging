@@ -9,7 +9,7 @@
 
     <!-- Deterministic + SourceLink -->
     <Deterministic>true</Deterministic>
-    <DebugType>embedded</DebugType>
+    <DebugType>portable</DebugType>
     <EmbedAllSources>true</EmbedAllSources>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <EnableSourceLink>true</EnableSourceLink>
@@ -21,19 +21,26 @@
 
     <!-- Package Info -->
     <Title>Easy.Logging</Title>
+	<AssemblyTitle>Easy.Logging</AssemblyTitle>
+    <AssemblyName>Easy.Logging</AssemblyName>
     <PackageId>Easy.Logging</PackageId>
-    <Version>1.0.7</Version>
+    <Version>1.0.8</Version>
     <Authors>Elmin Alirzayev</Authors>
     <Company>Easy Code Tools</Company>
+	<Copyright>Copyright © Elmin Alirzayev 2025</Copyright>
     <Description>Easy.Logging is a lightweight, high-performance caching library for .NET that supports MemoryLogging, Redis, and multi-layer caching with pluggable serialization.</Description>
     <PackageTags>Logging memoryLogging database sink file filtered buffered redis multilayer distributedLogging dotnet caching serializer</PackageTags>
     <RepositoryUrl>https://github.com/elminalirzayev/Easy.Logging</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>	  
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/elminalirzayev/Easy.Logging</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+	<PackageReleaseNotes>-</PackageReleaseNotes>
 
     <!-- Build -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>	  
     <LangVersion>10.0</LangVersion>
   </PropertyGroup>
 
