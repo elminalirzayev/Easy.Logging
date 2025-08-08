@@ -25,10 +25,8 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: Pack
-      run: dotnet pack --configuration Release --no-build -o out
+      run:  dotnet pack --configuration Release --no-build -p:ContinuousIntegrationBuild=true -o out
 
     - name: Push package to NuGet
       run: dotnet nuget push "out/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
-
-    - name: Push symbols to NuGet
-      run: dotnet nuget push "out/*.snupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      
