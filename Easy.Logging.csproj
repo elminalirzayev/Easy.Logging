@@ -9,7 +9,7 @@
 
     <!-- Deterministic + SourceLink -->
     <Deterministic>true</Deterministic>
-    <DebugType>portable</DebugType>
+    <DebugType>embedded</DebugType>
     <EmbedAllSources>true</EmbedAllSources>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <EnableSourceLink>true</EnableSourceLink>
@@ -17,11 +17,12 @@
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>true</IncludeSource>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 
     <!-- Package Info -->
     <Title>Easy.Logging</Title>
     <PackageId>Easy.Logging</PackageId>
-    <Version>1.0.6</Version>
+    <Version>1.0.7</Version>
     <Authors>Elmin Alirzayev</Authors>
     <Company>Easy Code Tools</Company>
     <Description>Easy.Logging is a lightweight, high-performance caching library for .NET that supports MemoryLogging, Redis, and multi-layer caching with pluggable serialization.</Description>
