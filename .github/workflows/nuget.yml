@@ -1,27 +1,31 @@
-name: Build & Test
+name: Publish NuGet
 
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    tags:
+      - 'v*.*.*' 
 
 jobs:
   build:
-    runs-on: windows-latest
-    strategy:
-      matrix:
-        framework: [ 'net9.0', 'net8.0', 'net7.0', 'net6.0', 'netstandard2.1', 'net48', 'net47' ]
+    runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v4
-    - name: Setup .NET SDK
+
+    - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '9.0.x' 
+        dotnet-version: '9.0.x'
+
     - name: Restore dependencies
       run: dotnet restore
+
     - name: Build
-      run: dotnet build --no-restore --configuration Release
-    - name: Test
-      run: dotnet test --no-build --verbosity normal || echo "No tests found, skipping."
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Pack
+      run: dotnet pack --configuration Release --no-build -o out
+
+    - name: Push to NuGet
+      run: dotnet nuget push "out/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
