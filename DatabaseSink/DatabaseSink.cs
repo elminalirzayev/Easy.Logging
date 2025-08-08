@@ -4,7 +4,7 @@ using System.Collections.Generic;
 #if NET6_0_OR_GREATER || NET7_0_OR_GREATER || NET8_0_OR_GREATER
 using Microsoft.EntityFrameworkCore;
 #endif
-#if NETSTANDARD2_0_OR_GREATER
+#if NETSTANDARD2_0_OR_GREATER ||NETFRAMEWORK
 using System.Data.Entity;
 #endif
 
@@ -25,7 +25,7 @@ namespace Easy.Logging.DatabaseSink_
         }
     }
 #endif
-#if NETSTANDARD2_0_OR_GREATER
+#if NETSTANDARD2_1_OR_GREATER ||NETFRAMEWORK
     public class LogDbContext : DbContext
     {
         public DbSet<LogEntryEntity> Logs { get; set; }
