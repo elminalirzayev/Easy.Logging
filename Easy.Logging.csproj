@@ -9,7 +9,7 @@
 
     <!-- Deterministic + SourceLink -->
     <Deterministic>true</Deterministic>
-    <DebugType>embedded</DebugType>
+    <DebugType>portable</DebugType>
     <EmbedAllSources>true</EmbedAllSources>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <EnableSourceLink>true</EnableSourceLink>
