@@ -1,75 +1,77 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Library</OutputType>
-    <!--<TargetFramework>net8.0</TargetFramework>-->
-    <TargetFrameworks>net9.0;net8.0;net7.0;net6.0;net48;net47;netstandard2.1;</TargetFrameworks>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<!--<TargetFramework>net6.0</TargetFramework>-->
+		<TargetFrameworks>net9.0;net8.0;net7.0;net6.0;net48;net47;netstandard2.1;</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
 
-    <!-- Deterministic + SourceLink -->
-    <Deterministic>true</Deterministic>
-    <DebugType>portable</DebugType>
-    <EmbedAllSources>true</EmbedAllSources>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <EnableSourceLink>true</EnableSourceLink>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <IncludeSymbols>true</IncludeSymbols>
-    <IncludeSource>true</IncludeSource>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<!-- Deterministic + SourceLink -->
+		<Deterministic>true</Deterministic>
+		<DebugType>portable</DebugType>
+		<EmbedAllSources>true</EmbedAllSources>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<EnableSourceLink>true</EnableSourceLink>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<IncludeSymbols>true</IncludeSymbols>
+		<IncludeSource>true</IncludeSource>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 
-    <!-- Package Info -->
-    <Title>Easy.Logging</Title>
-	<AssemblyTitle>Easy.Logging</AssemblyTitle>
-    <AssemblyName>Easy.Logging</AssemblyName>
-    <PackageId>Easy.Logging</PackageId>
-    <Version>1.0.8</Version>
-    <Authors>Elmin Alirzayev</Authors>
-    <Company>Easy Code Tools</Company>
-	<Copyright>Copyright © Elmin Alirzayev 2025</Copyright>
-    <Description>Easy.Logging is a lightweight, high-performance caching library for .NET that supports MemoryLogging, Redis, and multi-layer caching with pluggable serialization.</Description>
-    <PackageTags>Logging memoryLogging database sink file filtered buffered redis multilayer distributedLogging dotnet caching serializer</PackageTags>
-    <RepositoryUrl>https://github.com/elminalirzayev/Easy.Logging</RepositoryUrl>
-	<RepositoryType>git</RepositoryType>	  
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/elminalirzayev/Easy.Logging</PackageProjectUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-	<PackageReleaseNotes>-</PackageReleaseNotes>
+		<!-- Package Info -->
+		<Title>Easy.Logging</Title>
+		<AssemblyTitle>Easy.Logging</AssemblyTitle>
+		<AssemblyName>Easy.Logging</AssemblyName>
+		<PackageId>Easy.Logging</PackageId>
+		<Version>1.0.8</Version>
+		<Authors>Elmin Alirzayev</Authors>
+		<Company>Easy Code Tools</Company>
+		<Copyright>Copyright © Elmin Alirzayev 2025</Copyright>
+		<Description>Easy.Logging is a lightweight, high-performance caching library for .NET that supports MemoryLogging, Redis, and multi-layer caching with pluggable serialization.</Description>
+		<PackageTags>Logging memoryLogging database sink file filtered buffered redis multilayer distributedLogging dotnet caching serializer</PackageTags>
+		<RepositoryUrl>https://github.com/elminalirzayev/Easy.Logging</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/elminalirzayev/Easy.Logging</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageReleaseNotes>-</PackageReleaseNotes>
 
-    <!-- Build -->
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <!--<GenerateDocumentationFile>true</GenerateDocumentationFile>-->
-    <!--<TreatWarningsAsErrors>true</TreatWarningsAsErrors>-->	  
-    <LangVersion>10.0</LangVersion>
-  </PropertyGroup>
+		<!-- Build -->
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<!--<GenerateDocumentationFile>true</GenerateDocumentationFile>-->
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+		<LangVersion>10.0</LangVersion>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
-    <PackageReference Include="StackExchange.Redis" Version="2.8.58" />
-    <PackageReference Include="System.Text.Json" Version="9.0.8" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.8" />
-  </ItemGroup>
+	</PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net9.0'">
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.8" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="README.md">
+			<Pack>true</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net7.0' Or '$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.8" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+		<PackageReference Include="StackExchange.Redis" Version="2.8.58" />
+		<PackageReference Include="System.Text.Json" Version="9.0.8" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.8" />
+	</ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net48' Or '$(TargetFramework)' == 'net47' Or '$(TargetFramework)' == 'netstandard2.1'">
-    <PackageReference Include="EntityFramework" Version="6.5.1" />
-  </ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net9.0'">
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.8" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="README.md">
-      <Pack>true</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net7.0' Or '$(TargetFramework)' == 'net6.0'">
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.8" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net48' Or '$(TargetFramework)' == 'net47' Or '$(TargetFramework)' == 'netstandard2.1'">
+		<PackageReference Include="EntityFramework" Version="6.5.1" />
+	</ItemGroup>
 
 </Project>

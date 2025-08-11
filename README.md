@@ -3,6 +3,7 @@
 [![Build & Nuget Publish](https://github.com/elminalirzayev/Easy.Logging/actions/workflows/nuget.yml/badge.svg)](https://github.com/elminalirzayev/Easy.Logging/actions/workflows/nuget.yml)
 [![Release](https://img.shields.io/github/v/release/elminalirzayev/Easy.Logging)](https://github.com/elminalirzayev/Easy.Logging/releases)
 [![License](https://img.shields.io/github/license/elminalirzayev/Easy.Logging)](https://github.com/elminalirzayev/Easy.Logging/blob/master/LICENSE.txt)
+[![NuGet](https://img.shields.io/nuget/v/Easy.Logging.svg)](https://www.nuget.org/packages/Easy.Logging)
 
 # Easy.Logging
 
@@ -48,3 +49,7 @@ You can implement your own `ILogSink` or `ILogFormatter` for custom sinks or for
 
 ## License
 MIT
+
+---
+
+© 2025 Elmin Alirzayev / Easy Code Tools

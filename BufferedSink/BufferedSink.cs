@@ -30,7 +30,7 @@ namespace Easy.Logging.BufferedSink
                 await _innerSink.EmitAsync(entry);
             }
         }
-       
+
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETFRAMEWORK
 
